@@ -30,7 +30,7 @@ export const Input = styled.input`
   }
 
   &:focus {
-    border: 3px solid #0d41e1;
+    border: 3px solid #567aea;
     outline: none;
   }
 `;
@@ -65,6 +65,74 @@ export const Button = styled.button`
 `;
 
 export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const ModalContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ModalBody = styled.div`
+  background-color: #fff;
+  width: fit-content;
+  max-width: 500px;
+  display: flex;
+  border-radius: 10px;
+`;
+
+export const ImageContainer = styled.div`
+  background-color: #fdd9d7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 2em;
+  margin-right: 1em;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+`;
+
+export const TextContainer = styled.div`
+  padding-right: 1em;
+`;
+
+export const H3 = styled.h3`
+  font-size: 22px;
+  margin-bottom: 0;
+`;
+
+export const P = styled.p`
+  color: rgba(0, 0, 0, 0.8);
+`;
+
+export const ModalButton = styled.button`
+  background-color: #567aea;
+  color: #fff;
+  padding: 0.5em 1.5em;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  transition: 0.2s;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    background-color: #0d41e1;
+  }
+`;
+
+export const ModalButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;

@@ -9,7 +9,7 @@ import {
   ButtonContainer,
 } from "./styles";
 
-const Form = ({ setUserList }) => {
+const Form = ({ setUserList, toggleModal, setModalMessage }) => {
   const [userInput, setUserInput] = useState({
     name: "",
     age: "",
@@ -22,8 +22,52 @@ const Form = ({ setUserList }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setUserList((prevUsers) => [userInput, ...prevUsers]);
 
+    if (userInput.name === "") {
+      setModalMessage("Sorry, name cannot be empty. Please provide a name.");
+      toggleModal();
+      return;
+    }
+
+    if (!isNaN(userInput.name)) {
+      setModalMessage("Sorry, name cannot be a number. Please provide a name.");
+      toggleModal();
+      return;
+    }
+
+    if (userInput.age < 0) {
+      setModalMessage(
+        "Sorry, age cannot be negative. Please provide an integer value."
+      );
+      toggleModal();
+      return;
+    }
+
+    if (userInput.age === "") {
+      setModalMessage(
+        "Sorry, age cannot be empty. Please provide an integer value."
+      );
+      toggleModal();
+      return;
+    }
+
+    if (userInput.address === "") {
+      setModalMessage(
+        "Sorry, address cannot be empty. Please provide address."
+      );
+      toggleModal();
+      return;
+    }
+
+    if (!isNaN(userInput.address)) {
+      setModalMessage(
+        "Sorry, address cannot be a number. Please provide an address."
+      );
+      toggleModal();
+      return;
+    }
+
+    setUserList((prevUsers) => [userInput, ...prevUsers]);
     setUserInput({ name: "", age: "", address: "" });
   };
 
