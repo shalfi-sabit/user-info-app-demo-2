@@ -47,15 +47,21 @@ export const FormRow = styled.div`
 
 export const Button = styled.button`
   width: 100%;
-  background-color: #0d41e1;
+  background-color: #567aea;
   color: #fff;
   padding: 1em;
   border: none;
   outline: none;
   border-radius: 5px;
   margin-top: 1.5em;
-  font-weight: 600;
   font-size: 1rem;
+  transition: 0.2s;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    background-color: #0d41e1;
+  }
 `;
 
 export const ButtonContainer = styled.div`
